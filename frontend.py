@@ -1,6 +1,7 @@
 from tkinter import *
 from tkinter import messagebox
-from backend import PasswordManagerBe
+# from backend import PasswordManagerBe
+from backend_sqlalchemycore import PasswordManagerBE
 
 class PasswordManagerGUI:
     def __init__(self, master) -> None:
@@ -10,7 +11,7 @@ class PasswordManagerGUI:
         self.master.configure(padx=50, pady=50)
         self.master.resizable(False, False)
         # self.master.configure(background='#ECECEC')
-        self.password_be = PasswordManagerBe()
+        self.password_be = PasswordManagerBE()
 
         #logo
         self.canvas = Canvas(self.master, width=200, height=200)
@@ -87,5 +88,8 @@ class PasswordManagerGUI:
 def main():
     main_window = Tk()
     password_manager = PasswordManagerGUI(main_window)
+    
+    # p = PasswordManagerBE()
+    # p.close_conn()
 
     main_window.mainloop()
